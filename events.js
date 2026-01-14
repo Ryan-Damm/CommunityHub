@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filtered.forEach((event, index) => {
             container.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4">
           <div class="card h-100" id="event-${index}">
             <div class="card-body">
               <h5 class="card-title">${event.title}</h5>
