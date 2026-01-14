@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        #calendar td {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        #calendar td.bg-warning {
+            font-weight: bold;
+            color: #000;
+            background-color: #FF8811;
+        }
+
+        #calendar td:hover {
+            background-color: #FF8811;
+            cursor: pointer;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg header">
+        <div class="container">
+            <a class="navbar-brand text-color" href="index.html">Community Hub</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-color">
+                        <a class="nav-link text-color" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-color active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-color" href="suggest-event.html">Suggest a Resource</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="mainbar py-5">
+        <div class="container">
+            <h1 class="mb-1 text-color">Community Events</h1>
+            <p class="text-muted mb-0">
+                Browse all upcoming events and click on a calendar date to jump to an event.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- Calendar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button id="prevMonth" class="btn btn-sm btn-secondary">&lt; Prev</button>
+            <h4 id="calendarMonthYear" class="mb-0"></h4>
+            <button id="nextMonth" class="btn btn-sm btn-secondary">Next &gt;</button>
+        </div>
+        <div id="calendar" class="mb-5"></div>
+
+        <!-- Filter -->
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <select id="typeFilter" class="form-control">
+                    <option value="all">All Event Types</option>
+                    <option value="Government">Government</option>
+                    <option value="Community">Community</option>
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Health">Health</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Event Cards -->
+        <div id="allEventsContainer" class="row g-4"></div>
+
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Contact</h5>
+                    <p>Email: info@communityhub.org</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="events.html" class="text-light">Events</a></li>
+                        <li><a href="suggest-event.html" class="text-light">Suggest a Resource</a></li>
+                        <li><a href="#" id="clearStorageLink" class="text-light">Clear Events (Demo)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social / Other Info -->
+                <div class="col-md-4">
+                    <h5>More</h5>
+                    <p>Community Resource Hub © 2026</p>
+                    <p><a href="#" class="text-light">Privacy Policy</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Data + Logic -->
+    <script src="data.js"></script>
+    <script src="events.js"></script>
+
+    <script>
+        // Clear localStorage when link is clicked
+        document.getElementById('clearStorageLink').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('communityEvents');
+            alert('Events have been reset to default. Reloading page...');
+            location.reload();
+        });
+    </script>
+
+    <!-- Bootstrap JS + jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhvVbNQZcF7FZj/gm3tc3iV7xS1aFf0hT0VYQkS3Gp0J"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
