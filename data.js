@@ -7,21 +7,21 @@ if (localStorage.getItem('communityEvents')) {
     events = [
         {
             title: "Community Town Hall Q&A",
-            date: "2026-02-03",
+            date: "2026-01-28",
             location: "Town Hall",
             type: "Government",
             description: "Residents are invited to ask questions and discuss local issues with town officials."
         },
         {
             title: "Winter Clothing Donation Drive",
-            date: "2026-02-07",
+            date: "2026-01-30",
             location: "Community Center",
             type: "Volunteer",
             description: "Donate gently used winter coats, hats, and gloves to support families in need."
         },
         {
             title: "Local Arts & Crafts Expo",
-            date: "2026-02-11",
+            date: "2026-02-05",
             location: "Civic Plaza",
             type: "Community",
             description: "A showcase of local artists and craft makers with interactive demonstrations."
@@ -76,6 +76,7 @@ if (localStorage.getItem('communityEvents')) {
             description: "Students explore career paths through hands-on activities and local organization booths."
         }
     ];
+
     // Save the default events to localStorage
     localStorage.setItem('communityEvents', JSON.stringify(events));
 }
