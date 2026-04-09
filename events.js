@@ -13,26 +13,50 @@ document.addEventListener("DOMContentLoaded", () => {
             .sort((a, b) => new Date(a.date) - new Date(b.date));
 
         filtered.forEach((event, index) => {
-            container.innerHTML += `
-        <div class="col-md-4 mb-4">
-          <div class="card h-100" id="event-${index}">
+    container.innerHTML += `
+    <div class="col-md-4 mb-4">
+        <div class="card h-100" id="event-${index}">
             <div class="card-body">
-              <h5 class="card-title">${event.title}</h5>
-              <p class="card-text">
-                ${new Date(event.date + " 00:00:00").toLocaleDateString()} – ${event.location}
-              </p>
-              <p class="text-muted">${event.type}</p>
+                <h5 class="card-title">${event.title}</h5>
+                <p class="card-text">
+                    ${new Date(event.date + " 00:00:00").toLocaleDateString()} – ${event.location}
+                </p>
+                <p class="text-muted">${event.type}</p>
+
+                <!-- RSVP BUTTONS -->
+                <button 
+                    class="btn btn-outline-success btn-sm"
+                    data-rsvp="going"
+                    data-index="${index}"
+                    onclick="rsvp(${index}, 'going')">
+                    Going
+                </button>
+
+                <button 
+                    class="btn btn-outline-primary btn-sm"
+                    data-rsvp="interested"
+                    data-index="${index}"
+                    onclick="rsvp(${index}, 'interested')">
+                    Interested
+                </button>
+
+                <!-- COUNT -->
+                <p class="mt-2 small text-muted" data-count="${index}">
+                    Loading...
+                </p>
             </div>
-          </div>
         </div>
-      `;
-        });
+    </div>
+    `;
+});
 
         // After rendering, attach click handlers if needed later
     }
 
     // Initial render
     renderEvents();
+    events.forEach((e, i) => updateEventDisplay(i));
+    updateAllCounts();
 
     // Filter change
     typeFilter.addEventListener("change", () => {
@@ -146,3 +170,14 @@ nextMonthBtn.addEventListener('click', () => {
     }
     renderCalendar(currentYear, currentMonth);
 });
+
+function updateAllCounts() {
+    const counts = JSON.parse(localStorage.getItem('eventCounts') || '{}');
+
+    events.forEach((event, index) => {
+        const countEl = document.querySelector(`p[data-count="${index}"]`);
+        if (countEl && counts[index]) {
+            countEl.textContent = `Interested: ${counts[index].interested} | Going: ${counts[index].going}`;
+        }
+    });
+}

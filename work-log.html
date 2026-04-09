@@ -1,42 +1,35 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css">
-    <title>TSA Webmaster</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayor / Council - Community Hub</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg header">
+<!-- NAVBAR (same as template) -->
+<nav class="navbar navbar-expand-lg header">
     <div class="container">
         <a class="navbar-brand text-color" href="index.html">Community Hub</a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ml-auto">
-
                 <li class="nav-item active">
                     <a class="nav-link text-color" href="index.html">Home</a>
                 </li>
-
-                <!-- 🔽 DROPDOWN GOES HERE -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
                         Community & Government
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="departments/mayor.html">Mayor / Council</a>
-                        <a class="dropdown-item" href="departments/town-adm.html">Town Administration</a>
-                        <a class="dropdown-item" href="departments/finance-dep.html">Finance Department</a>
-                        <a class="dropdown-item" href="departments/hr.html">Human Resources</a>
+                        <a class="dropdown-item" href="mayor.html">Mayor / Council</a>
+                        <a class="dropdown-item" href="town-adm.html">Town Administration</a>
+                        <a class="dropdown-item" href="finance-dep.html">Finance Department</a>
+                        <a class="dropdown-item" href="hr.html">Human Resources</a>
                     </div>
                 </li>
 
@@ -45,9 +38,9 @@
                         Safety
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="departments/police.html">Police Department</a>
-                        <a class="dropdown-item" href="departments/fire.html">Fire Department</a>
-                        <a class="dropdown-item" href="departments/emerg-mang.html">Emergency Management</a>
+                        <a class="dropdown-item" href="police.html">Police Department</a>
+                        <a class="dropdown-item" href="fire.html">Fire Department</a>
+                        <a class="dropdown-item" href="emerg-mang.html">Emergency Management</a>
                     </div>
                 </li>
 
@@ -56,9 +49,9 @@
                         Infrastructure
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="departments/public-works.html">Public Works</a>
-                        <a class="dropdown-item" href="departments/utilities.html">Utilities</a>
-                        <a class="dropdown-item" href="departments/transportation.html">Transportation</a>
+                        <a class="dropdown-item" href="public-works.html">Public Works</a>
+                        <a class="dropdown-item" href="utilities.html">Utilities</a>
+                        <a class="dropdown-item" href="transportation.html">Transportation</a>
                     </div>
                 </li>
 
@@ -67,9 +60,9 @@
                         Community Life
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="departments/parks.html">Parks & Recreation</a>
-                        <a class="dropdown-item" href="departments/library.html">Library</a>
-                        <a class="dropdown-item" href="departments/community-center.html">Community Center</a>
+                        <a class="dropdown-item" href="parks.html">Parks & Recreation</a>
+                        <a class="dropdown-item" href="library.html">Library</a>
+                        <a class="dropdown-item" href="community-center.html">Community Center</a>
                     </div>
                 </li>
 
@@ -78,11 +71,11 @@
                         More
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="departments/sus-off.html">Sustainability Office</a>
-                        <a class="dropdown-item" href="departments/eco-develop.html">Economic Development</a>
-                        <a class="dropdown-item" href="departments/tourism-board.html">Tourism Board</a>
-                        <a class="dropdown-item" href="departments/youth-prog.html">Youth Programs</a>
-                        <a class="dropdown-item" href="departments/ss.html">Senior Services</a>
+                        <a class="dropdown-item" href="sus-off.html">Sustainability Office</a>
+                        <a class="dropdown-item" href="eco-develop.html">Economic Development</a>
+                        <a class="dropdown-item" href="tourism-board.html">Tourism Board</a>
+                        <a class="dropdown-item" href="youth-prog.html">Youth Programs</a>
+                        <a class="dropdown-item" href="ss.html">Senior Services</a>
                     </div>
                 </li>
 
@@ -97,48 +90,41 @@
         </div>
     </div>
 </nav>
-<section>
-    
-    <header class="mainbar py-5">
-        <div class="container">
-            <h1 class="mb-1 text-color">Suggest an Event</h1>
-            <p class="text-muted mb-0">
-                Fill out the form to suggest an event to be added to the community events calendar.
-            </p>
+
+<section class="py-4 mainbar">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="text-color">Work Log and Citations</h1>
+            </div>
         </div>
-    </header>
+    </div>
+</section>
+
+<div class="container my-5">
+    <h4>
+        Work Log
+    </h4>
+    <img src="log.jpeg" alt="Work log for this website.">
+
+    <br>
+
+    <h4>
+        Citations
+    </h4>
+    <p>
+        The images used in this website were royalty free images and are cited below.
+    </p>
+
+    <cite>
+        TSA Logo. PA TSA, www.patsa.org/membership/handbooks/tsa_logo/. Accessed 8 Apr.
+     2026.
+    </cite>
     
+</div>
 
-    <section class="py-5">
-        <div class="container">
-            <form id="suggestEventForm">
-                <div class="mb-3">
-                    <label class="form-label text-color">Event Name</label>
-                    <input type="text" class="form-control" id="eventName" placeholder="Example Event">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label text-color">Proposed Date</label>
-                    <input type="date" class="form-control" id="eventDate">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label text-color">Description</label>
-                    <textarea class="form-control" rows="4" id="eventDescription"></textarea>
-                </div>
-
-                <button type="button" class="btn btn-primary" id="submitEventBtn">
-                    Submit
-                </button>
-            </form>
-
-            <p id="formConfirmation" class="text-success mt-3">
-                This form will create a new event and add it to the events tab.
-            </p>
-        </div>
-    </section>
-
-    <footer class="footer text-light py-4">
+<!-- FOOTER -->
+<footer class="footer text-light py-4">
         <div class="container">
             <div class="row">
 
@@ -180,18 +166,9 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
-    <script src="events.js"></script>
-    <script src="suggest-events.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-    <script> scr="base.js"</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script scr="rsvp.js"></script>
+<script scr="events.js"></script>
 </body>
-
 </html>

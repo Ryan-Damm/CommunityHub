@@ -10,54 +10,97 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <style>
-        #calendar td {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        #calendar td.bg-warning {
-            font-weight: bold;
-            color: #000;
-            background-color: #FF8811;
-        }
-
-        #calendar td:hover {
-            background-color: #FF8811;
-            cursor: pointer;
-        }
-    </style>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg header">
-        <div class="container">
-            <a class="navbar-brand text-color" href="index.html">Community Hub</a>
+    <div class="container">
+        <a class="navbar-brand text-color" href="index.html">Community Hub</a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item text-color">
-                        <a class="nav-link text-color" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-color active" href="events.html">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-color" href="suggest-event.html">Suggest a Resource</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link text-color" href="index.html">Home</a>
+                </li>
+
+                <!-- 🔽 DROPDOWN GOES HERE -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
+                        Community & Government
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="departments/mayor.html">Mayor / Council</a>
+                        <a class="dropdown-item" href="departments/town-adm.html">Town Administration</a>
+                        <a class="dropdown-item" href="departments/finance-dep.html">Finance Department</a>
+                        <a class="dropdown-item" href="departments/hr.html">Human Resources</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
+                        Safety
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="departments/police.html">Police Department</a>
+                        <a class="dropdown-item" href="departments/fire.html">Fire Department</a>
+                        <a class="dropdown-item" href="departments/emerg-mang.html">Emergency Management</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
+                        Infrastructure
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="departments/public-works.html">Public Works</a>
+                        <a class="dropdown-item" href="departments/utilities.html">Utilities</a>
+                        <a class="dropdown-item" href="departments/transportation.html">Transportation</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
+                        Community Life
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="departments/parks.html">Parks & Recreation</a>
+                        <a class="dropdown-item" href="departments/library.html">Library</a>
+                        <a class="dropdown-item" href="departments/community-center.html">Community Center</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-color" href="#" id="departmentsDropdown" role="button" data-toggle="dropdown">
+                        More
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="departments/sus-off.html">Sustainability Office</a>
+                        <a class="dropdown-item" href="departments/eco-develop.html">Economic Development</a>
+                        <a class="dropdown-item" href="departments/tourism-board.html">Tourism Board</a>
+                        <a class="dropdown-item" href="departments/youth-prog.html">Youth Programs</a>
+                        <a class="dropdown-item" href="departments/ss.html">Senior Services</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-color" href="events.html">Events</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-color" href="suggest-event.html">Suggest a Resource</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+<section>
 
     <!-- Page Header -->
     <header class="mainbar py-5">
@@ -98,7 +141,7 @@
 
     </main>
 
-    <footer class="bg-dark text-light py-4">
+    <footer class="footer text-light py-4">
         <div class="container">
             <div class="row">
 
@@ -124,9 +167,19 @@
                 <div class="col-md-4">
                     <h5>More</h5>
                     <p>Community Resource Hub © 2026</p>
-                    <p><a href="#" class="text-light">Privacy Policy</a></p>
-                </div>
+                    <p><a href="work-log.html" class="text-light">Work Log and Citations</a></p>
 
+                    <form id="login-form" class="mb-2">
+                        <input type="text" id="username-input" class="form-control mb-2" placeholder="Username">
+                        <button type="button" id="login-button" class="btn btn-sm btn-outline-light btn-block">Login</button>
+                    </form>
+
+                    <!-- Logged-in display (shown when logged in) -->
+                    <div id="user-container" style="display:none;">
+                        <span id="user-display" class="d-block mb-2"></span>
+                        <button type="button" id="logout-button" class="btn btn-sm btn-outline-light btn-block">Logout</button>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -134,6 +187,7 @@
     <!-- Data + Logic -->
     <script src="data.js"></script>
     <script src="events.js"></script>
+    <script src="rsvp.js"></script>
 
     <script>
         // Clear localStorage when link is clicked
@@ -153,6 +207,10 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+    <script> scr="base.js"</script>
 </body>
 
 </html>
